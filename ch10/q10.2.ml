@@ -15,4 +15,4 @@ let rec ins_sort lst = match lst with
 (* テスト *)
 let test1 = ins_sort [] = []
 let test2 = ins_sort [2; 1] = [1; 2]
-let test3 = ins_sort [1; 3; 2] = [1; 2; 3]
+let test3 = ins_sort [3; 2; 1] = [1; 2; 3] (*バグ!!*)
