@@ -10,9 +10,9 @@ let rec insert lst n = match lst with
 (* ins_sort : int list -> int list *)
 let rec ins_sort lst = match lst with
     [] -> []
-  | first :: rest -> insert rest first
-
+  | first :: rest -> insert (ins_sort rest) first
+   
 (* テスト *)
 let test1 = ins_sort [] = []
 let test2 = ins_sort [2; 1] = [1; 2]
-let test3 = ins_sort [3; 2; 1] = [1; 2; 3] (*バグ!!*)
+let test3 = ins_sort [3; 2; 1] = [1; 2; 3]

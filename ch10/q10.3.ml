@@ -3,12 +3,7 @@ type gakusei_t = {
   tensuu : int;
   seiseki : string;
 }
-(*
-lst:70,60
-gakusei:90
-first:70
-rest:[60]
-*)
+
 (* insert_gakusei : gakusei_t list -> gakusei_t -> gakusei_t list *)
 let rec insert_gakusei lst gakusei = match lst with
     [] -> [gakusei]
@@ -20,7 +15,7 @@ let rec insert_gakusei lst gakusei = match lst with
 (* gakusei_sort : gakusei_t list -> gakusei_t list *)
 let rec gakusei_sort lst = match lst with
     [] -> []
-  | first :: rest -> insert_gakusei rest first
+  | first :: rest -> insert_gakusei (gakusei_sort rest) first
 
 (* テスト *)
 let test1 = gakusei_sort [] = []
